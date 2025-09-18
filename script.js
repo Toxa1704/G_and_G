@@ -1,11 +1,11 @@
 
 document.getElementById("myForm").addEventListener("submit", function(e) {
-  e.preventDefault(); 
   const name = document.getElementById("name").value.trim();
   const email = document.getElementById("email").value.trim();
   const sms = document.getElementById("sms").value.trim();
   const error = document.getElementById("error");
 
+  error.textContent = ""; 
   if (name.length < 2) {
     error.textContent = "Ім'я повинно містити щонайменше 2 символи.";
     return;
@@ -18,10 +18,6 @@ document.getElementById("myForm").addEventListener("submit", function(e) {
     error.textContent = "Повідомлення занадто коротке.";
     return;
   }
-  error.textContent = ""; 
-  console.log(name);
-  console.log(email);
-  console.log(sms);
   const params = new URLSearchParams({ name, email, sms });
   window.open("result.html?" + params.toString(), "_blank");
 });
