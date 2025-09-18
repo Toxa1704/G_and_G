@@ -1,4 +1,4 @@
-
+import axios from '/axios';
 document.getElementById("myForm").addEventListener("submit", function(e) {
   const name = document.getElementById("name").value.trim();
   const email = document.getElementById("email").value.trim();
@@ -18,8 +18,27 @@ document.getElementById("myForm").addEventListener("submit", function(e) {
     error.textContent = "Повідомлення занадто коротке.";
     return;
   }
-  const params = new URLSearchParams({ name, email, sms });
-  window.open("result.html?" + params.toString(), "_blank");
+  const apiUrl = "https://g-and-g-pi.vercel.app/test"
+  const parameters = {
+  name,
+  email,
+  sms
+};
+console.log(parameters)
+  axios.get(apiUrl,{})
+  .then(response => {
+    console.log(response.data); 
+  })
+  .catch(error => {
+    console.error('Error fetching data:', error);
+  });
+//     axios.post('https://api.example.com/data')
+//   .then(response => {
+//     console.log(response.data); 
+//   })
+//   .catch(error => {
+//     console.error('Error fetching data:', error);
+//   });
 });
 
 const btnsBuy = document.querySelectorAll(".table-button");
@@ -32,9 +51,4 @@ btnsBuy.forEach((btn, index) => {
     popupWrapper.style.display = "flex";
     page.classList.add("blur");
   });
-});
-
-closeBtn.addEventListener("click", () => {
-  popupWrapper.style.display = "none";
-  page.classList.remove("blur");
 });
