@@ -29,17 +29,17 @@ const btnBuy = document.getElementsByClassName("table-button")[0];
 const popupWrapper = document.getElementsByClassName("popup-wrapper")[0];
 const closeBtn = document.getElementsByClassName("close-popup")[0];
 
-// Відкрити попап
+
 btnBuy.addEventListener("click", () => {
-  popupWrapper.style.display = "flex"; // flex для центрування
+  popupWrapper.style.display = "flex"; 
 });
 
-// Закрити попап
+
 closeBtn.addEventListener("click", () => {
   popupWrapper.style.display = "none";
 });
 
-// Додатково: клік поза вікном теж закриває
+
 popupWrapper.addEventListener("click", (e) => {
   if (e.target === popupWrapper) {
     popupWrapper.style.display = "none";
