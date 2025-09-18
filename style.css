@@ -130,7 +130,7 @@ span{
 .hero-button:hover{
     background-color: #dacb20;
 }
-.hero-button:active,.table-button:active,.submit-button:active,.nav-li:active{
+.hero-button:active,.table-button:active,.submit-button:active,.nav-li:active,.close-popup:active{
 box-shadow: inset 0px -4px 4px rgba(255, 255, 255, 0.25), inset 0px 2px 4px rgba(0, 0, 0, 0.5);
 }
 #concerts{
@@ -170,7 +170,7 @@ th {
     color: white;
 }
 
-.table-button,.submit-button{
+.table-button,.submit-button,.close-popup{
     color: aliceblue;
     background-color: #FE2C58;
     padding: 12px 16px;
@@ -179,7 +179,7 @@ th {
     border-radius: 10px;
     transition: all 0.1s ease;
 }
-.table-button:hover,.submit-button:hover{
+.table-button:hover,.submit-button:hover,.close-popup:hover{
     background-color: #d60c38;
     cursor: pointer;
 }
@@ -396,7 +396,31 @@ background-color: #121212;
     padding: 8px 20px;
     background-color: #FE2C58;
 }
-
+    @media (min-width: 768px) and (max-width: 1024px) {
+            .hero,#concerts,#gallery,.about-wrapper,.contact-wrapper,footer{
+            padding: 60px 10px;
+        }
+        .gallery{
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .about-img{
+            width: 45%;
+            margin-left: 15px;
+        }
+                .contact-block,.name-email-block{
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .submit-button{
+            max-width: 100%;
+        }
+        .popup-wrapper{
+            top:110%;
+            left: 20%;
+        }
+    }
 
     @media (max-width: 768px) {
         body{
@@ -460,10 +484,14 @@ background-color: #121212;
             width: 50%;
             margin-left: 10px;
         }
-        .contact-block{
+        .contact-block,.name-email-block{
             flex-wrap: wrap;
             gap: 20px;
         }
+        .submit-button{
+            max-width: 100%;
+        }
+        
         .map{
             margin: 0;
         }
