@@ -1,5 +1,4 @@
 document.getElementById("myForm").addEventListener("submit", function(e) {
-    console.log(1)
     e.preventDefault();
   const name = document.getElementById("name").value.trim();
   const email = document.getElementById("email").value.trim();
@@ -25,7 +24,6 @@ document.getElementById("myForm").addEventListener("submit", function(e) {
   email,
   sms
 };
-console.log(parameters)
   axios.get(apiUrl,{params: parameters})
   .then(response => {
     console.log(response.data); 
@@ -33,7 +31,7 @@ console.log(parameters)
   .catch(error => {
     console.error('Error fetching data:', error);
   });
-//     axios.post('https://api.example.com/data')
+//   axios.post(apiUrl,{params: parameters})
 //   .then(response => {
 //     console.log(response.data); 
 //   })
