@@ -3,7 +3,7 @@ document.getElementById("myForm").addEventListener("submit", function(e) {
     e.preventDefault();
   const name = document.getElementById("name").value.trim();
   const email = document.getElementById("email").value.trim();
-  const sms = document.getElementById("sms").value.trim();
+  const sms = document.getElementById("message").value.trim();
   const error = document.getElementById("error");
 
   error.textContent = ""; 
