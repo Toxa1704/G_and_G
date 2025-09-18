@@ -252,7 +252,7 @@ background-color: #2b2b2b;
 }
 .about-wrapper{
     max-width: 1440px;
-    padding: 120px 0;
+    padding: 120px 10px;
     margin: auto;
 }
 .about-img{
@@ -399,21 +399,88 @@ background-color: #121212;
 
 
     @media (max-width: 768px) {
+        body{
+            font-size: 12px;
+            
+        }
+        .hero-title,.table-title,.about-title{
+            font-size: x-large;
+        }
+        .hero-subtitle{
+            font-size: large;
+        }
         ul {
-        display: none;
+        display: none; 
         flex-direction: column;
         background: #121212;
         position: absolute;
-        top: 50px;
+        top: 60px;
         left: 0;
         right: 0;
-        }
+        width: 100%;
+        padding: 10px 0;
+        gap: 0;
+        z-index: 10;
+    }
 
-        #menu-toggle:checked + .burger + ul {
+    #menu-toggle:checked + .burger + ul {
         display: flex;
-        }
+    }
 
-        .burger {
+    .burger {
         display: flex;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+        z-index: 20;
+    }
+
+    .nav-li {
+        padding: 12px 20px;
+    }
+        .hero-button{
+            max-width: 100%;
+        }
+        thead{
+            font-size: medium;
+        }
+        th, td{
+            padding: 8px;
+        }
+        .table-button, .sms-button{
+            font-size: 10px;
+            padding: 6px 10px;
+        }
+        .gallery{
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .about-img{
+            width: 50%;
+            margin-left: 10px;
+        }
+        .contact-content{
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .map{
+            margin: 0;
+        }
+        .hero,#concerts,#gallery,.about-wrapper,.contact-wrapper,footer{
+            padding: 60px 10px;
+        }
+        .footer-wrapper{
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .footer-contact{
+            gap: 20px;
+        }
+        .popup-wrapper {
+            width: 90%;
+            left: 5%;
+            top: 100%;
+            transform: translateY(-50%);
         }
     }
