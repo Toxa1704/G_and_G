@@ -15,6 +15,10 @@ html {
         color: antiquewhite;
         font-family: sans-serif;
     }
+.page-wrapper.blur {
+    filter: blur(5px);
+    overflow: hidden;  
+}
 header{
     background-color: #121212;
 }
@@ -370,21 +374,28 @@ footer{
 background-color: #121212;
 }
 .popup-wrapper{
+    z-index: 10;
     display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
     z-index: 6;
     position: absolute;
     top: 100%;
     left: 35%;
     width: 600px;
     height: 300px;
-    background-color: aliceblue;
-    color: #121212;
+    background-color: #121212;
+    color: aliceblue;
     border: 2px solid #d60c38;
     border-radius: 10px;
     padding: 20px;
     text-align: center;
 }
-
+.close-popup{
+    padding: 8px 20px;
+    background-color: #FE2C58;
+}
 
 
     @media (max-width: 768px) {

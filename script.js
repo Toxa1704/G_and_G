@@ -25,24 +25,20 @@ document.getElementById("myForm").addEventListener("submit", function(e) {
   const params = new URLSearchParams({ name, email, sms });
   window.open("result.html?" + params.toString(), "_blank");
 });
-const btnBuy = document.getElementsByClassName("table-button")[0];
-const popupWrapper = document.getElementsByClassName("popup-wrapper")[0];
-const closeBtn = document.getElementsByClassName("close-popup")[0];
 
+const btnsBuy = document.querySelectorAll(".table-button");
+const popupWrapper = document.querySelector(".popup-wrapper");
+const closeBtn = document.querySelector(".close-popup");
+const page = document.querySelector(".page-wrapper")
 
-btnBuy.addEventListener("click", () => {
-  popupWrapper.style.display = "flex"; 
+btnsBuy.forEach((btn, index) => {
+  btn.addEventListener("click", () => {
+    popupWrapper.style.display = "flex";
+    page.classList.add("blur");
+  });
 });
-
 
 closeBtn.addEventListener("click", () => {
   popupWrapper.style.display = "none";
+  page.classList.remove("blur");
 });
-
-
-popupWrapper.addEventListener("click", (e) => {
-  if (e.target === popupWrapper) {
-    popupWrapper.style.display = "none";
-  }
-});
-console.log(btnBay);
