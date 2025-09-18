@@ -1,5 +1,6 @@
-import axios from '/axios';
 document.getElementById("myForm").addEventListener("submit", function(e) {
+    console.log(1)
+    e.preventDefault();
   const name = document.getElementById("name").value.trim();
   const email = document.getElementById("email").value.trim();
   const sms = document.getElementById("sms").value.trim();
@@ -18,14 +19,14 @@ document.getElementById("myForm").addEventListener("submit", function(e) {
     error.textContent = "Повідомлення занадто коротке.";
     return;
   }
-  const apiUrl = "https://g-and-g-pi.vercel.app/test"
+  const apiUrl = "https://jsonplaceholder.typicode.com/posts/1"
   const parameters = {
   name,
   email,
   sms
 };
 console.log(parameters)
-  axios.get(apiUrl,{})
+  axios.get(apiUrl,{params: parameters})
   .then(response => {
     console.log(response.data); 
   })
@@ -48,7 +49,13 @@ const page = document.querySelector(".page-wrapper")
 
 btnsBuy.forEach((btn, index) => {
   btn.addEventListener("click", () => {
+    console.log(2)
     popupWrapper.style.display = "flex";
     page.classList.add("blur");
   });
+});
+closeBtn.addEventListener("click", () => {
+    console.log(3)
+  popupWrapper.style.display = "none";
+  page.classList.remove("blur");
 });
