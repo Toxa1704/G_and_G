@@ -3,6 +3,10 @@
     margin: 0;
     box-sizing: border-box;
 }
+a{
+    text-decoration: none;
+    color: aliceblue;
+}
 html {
     scroll-behavior: smooth;
 }
@@ -38,7 +42,7 @@ ul {
     gap: 40px;
 }
 
-a {
+.nav-li {
     display: block;
     border-bottom: 1px #121212 solid;
     padding: 6px 12px;
@@ -47,7 +51,7 @@ a {
     transition: all 0.8s ease;
 }
 
-a:hover {
+.nav-li:hover,.footer-social a:hover {
     color: #fed3dc;
     border-bottom: 1px solid #FE2C58;
 }
@@ -104,8 +108,11 @@ a:hover {
     gap: 10px;
 }
 .hero-button{
+    text-align: center;
+    text-decoration: none;
+    color: #121212;
     padding: 16px 10px;
-    max-width: 15%;
+    max-width: 20%;
     border-radius: 10px;
     border: none;
     background-color: #FBE826;
@@ -119,7 +126,7 @@ span{
 .hero-button:hover{
     background-color: #dacb20;
 }
-.hero-button:active,.table-button:active{
+.hero-button:active,.table-button:active,.sms-button:active,.nav-li:active{
 box-shadow: inset 0px -4px 4px rgba(255, 255, 255, 0.25), inset 0px 2px 4px rgba(0, 0, 0, 0.5);
 }
 #concerts{
@@ -159,7 +166,8 @@ th {
     color: white;
 }
 
-.table-button{
+.table-button,.sms-button{
+    color: aliceblue;
     background-color: #FE2C58;
     padding: 12px 16px;
     text-transform: uppercase;
@@ -167,7 +175,7 @@ th {
     border-radius: 10px;
     transition: all 0.1s ease;
 }
-.table-button:hover{
+.table-button:hover,.sms-button:hover{
     background-color: #d60c38;
     cursor: pointer;
 }
@@ -261,7 +269,7 @@ margin-bottom: 20px;
 }
 .contact-wrapper{
     max-width: 1440px;
-    padding: 120px;
+    padding: 120px 0;
     margin:0 auto;
     display: flex;
     flex-direction: column;
@@ -272,11 +280,110 @@ margin-bottom: 20px;
 .contact-content{
     width: 100%;
     display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    
+}
+.map{
+    padding: 16px;
+    border: 0.5px solid #676767;
+    border-radius: 10px;
+    width: 100%;
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.map iframe{
+    width: 100%;
+    height: 400px;
+    border-radius: 10px;
+}
+form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.content-name-email{
+    display: flex;
     align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+.contact-content input,.content-name-email div{
+    width: 100%;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+.content-sms{
+    margin-top: 20px;
+}
+.content-name input,.content-email input,.content-sms textarea{
+    padding: 10px;
+    font-size: large;
+    color: #ccc;
+    height: 40px;
+    border: 0.5px solid #676767;
+    background-color: #151921;
+}
+.content-sms textarea{
+    margin-top: 10px;
+    width: 100%;
+    height: 120px;
+    border-radius: 10px;
+}
+.content-name input:hover,.content-email input:hover,.content-sms textarea:hover{
+    background-color: #3b3b3b;
+}
+.sms-button{
+    max-width: 30%;
+}
+footer{
+    background-color: #121212;
+    padding: 120px 0;
+}
+.footer-wrapper{
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    align-items: flex-start;
     justify-content: space-between;
 }
-
-
+.footer-contact{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 60px;
+}
+.footer-social{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+.footer-social a{
+    transition: all 0.6s ease-in-out;
+}
+.pop-up{
+background-color: #121212;
+}
+.popup-wrapper{
+    display: none;
+    z-index: 6;
+    position: absolute;
+    top: 100%;
+    left: 35%;
+    width: 600px;
+    height: 300px;
+    background-color: aliceblue;
+    color: #121212;
+    border: 2px solid #d60c38;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+}
 
 
 
